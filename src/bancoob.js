@@ -79,7 +79,7 @@ var bancoob = {
       $dadosBoleto.carteira = '1';
 
       // SEUS DADOS
-      $dadosBoleto.identificacao = configArgs.cedenteIdentificacao;
+      // $dadosBoleto.identificacao = configArgs.cedenteIdentificacao;
       $dadosBoleto.cpfCnpj       = configArgs.cedenteCpfCnpj;
       $dadosBoleto.endereco      = configArgs.cedenteEndereco;
       $dadosBoleto.cidadeUF      = configArgs.cedenteCidadeUF;
@@ -119,7 +119,9 @@ var bancoob = {
       var $linha       = String($codigoBanco).concat($nummoeda, $dv, $fatorVencimento, $valor, $carteira, $agencia, $campolivre);
 
       var arquivoImagemBanco = __dirname + '/imagens/logobancoob.jpg';
+      var arquivoImagemVero = __dirname + '/imagens/logoVero.jpg'
 
+      $dadosBoleto.identificacaoImg       = 'data:image/png;base64,'.concat(base64Encode(arquivoImagemVero));
       $dadosBoleto.codigoBarras   = $linha;
       $dadosBoleto.linhaDigitavel = montaLinhaDigitavel($linha);
       $dadosBoleto.agenciaCodigo  = $agenciaCodigo;
