@@ -4,6 +4,7 @@ var q    = require('q');
 var pdf  = require('html-pdf');
 var swig = require('swig');
 var fnc  = require('./bacoob.func');
+var linhaDigitavelAux = "";
 
 var fbarcode = fnc.fbarcode;
 var modulo11 = fnc.modulo11;
@@ -130,6 +131,8 @@ var bancoob = {
       $dadosBoleto.fbarcode       = fbarcode($dadosBoleto.codigoBarras);
       $dadosBoleto.imgBanco       = 'data:image/png;base64,'.concat(base64Encode(arquivoImagemBanco));
 
+      linhaDigitavelAux = $dadosBoleto.linhaDigitavel
+
       var templateBancoob = __dirname + '/bancoob.swig';
 
       var html = swig.renderFile(templateBancoob, { dadosBoleto: $dadosBoleto });
@@ -156,7 +159,10 @@ var bancoob = {
     };
 
     return bancoob.gerarHTML(boletoArgs, configArgs).then(function(boletoHtml) {
-      return pdf.create(boletoHtml, pdfOptions);
+      var retorno = pdf.create(boletoHtml, pdfOptions);
+      retorno.linhaDigitavel = linhaDigitavelAux
+      console.log("AAAAAA", retorno.linhaDigitavel)
+      return retorno;
     });
   }
 };
