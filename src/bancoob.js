@@ -119,7 +119,7 @@ var bancoob = {
       var $dv          = modulo11($calcMd11);
       var $linha       = String($codigoBanco).concat($nummoeda, $dv, $fatorVencimento, $valor, $carteira, $agencia, $campolivre);
 
-      var arquivoImagemBanco = __dirname + '/imagens/logobancoob.jpg';
+      var arquivoImagemBanco = __dirname + '/imagens/novologoSICOOB.JPG';
       var arquivoImagemVero = __dirname + '/imagens/logoVero.jpg'
 
       $dadosBoleto.identificacaoImg       = 'data:image/png;base64,'.concat(base64Encode(arquivoImagemVero));
