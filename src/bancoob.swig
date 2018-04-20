@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ dadosBoleto.identificacao }}</title>
-    <img src="{{ dadosBoleto.identificacaoImg }}" width = "150" />
+    <img src="{{ dadosBoleto.identificacaoImg }}" width = "300" />
     <style type="text/css">
       <!--
 				.ti {font: 9px Arial, Helvetica, sans-serif}
