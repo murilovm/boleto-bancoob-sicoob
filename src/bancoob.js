@@ -152,10 +152,10 @@ var bancoob = {
     if (invalid('orientation')) pdfOptions.orientation = 'portrait';
     if (invalid('type'))        pdfOptions.type        = 'pdf';
     if (invalid('border'))      pdfOptions.border      = {
-      top:    '2.0in',
+      top:    '1.5in',
       left:   '1.5in',
       right:  '1.5in',
-      bottom: '2.0in'
+      bottom: '1.5in'
     };
 
     return bancoob.gerarHTML(boletoArgs, configArgs).then(function(boletoHtml) {
